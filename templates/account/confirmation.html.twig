@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if user %}
+    <h3>Félicitations</h3>
+    <p>Votre compte est activé. Vous pouvez vous connecter en cliquant 
+        <a href="{{path('account_login')}}">ici</a>
+    </p>
+{% else %}
+    Oups! Quelque chose a mal passé! Consulter votre adresse email.
+{% endif %}
+
+{% endblock %}

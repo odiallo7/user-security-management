@@ -1,0 +1,11 @@
+<h3>Bienvenue dans Symfony Labs !</h3>
+
+Bonjour {{ user.firstName }} {{ user.lastName }} ! Vous venez de vous inscrire au labo. <br> <br>
+
+Veuillez confirmer votre compte en cliquant sur ce 
+        <a href="{{ url('account_confirm', { 'token': user.confirmationToken}) }}">lien</a> <br> <br>
+
+Vous pouvez cliquer <a href="{{ url('account_login') }}">ici</a> pour vous connecter. <br> <br>
+
+
+Merci !!!
