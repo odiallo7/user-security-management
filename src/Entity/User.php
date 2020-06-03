@@ -83,6 +83,11 @@ class User implements UserInterface
      */
     private $lastLogin;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $passwordToken;
+
     public function __construct()
     {
         $this->announces = new ArrayCollection();
@@ -265,6 +270,18 @@ class User implements UserInterface
     public function setLastLogin(?\DateTimeInterface $lastLogin): self
     {
         $this->lastLogin = $lastLogin;
+
+        return $this;
+    }
+
+    public function getPasswordToken(): ?string
+    {
+        return $this->passwordToken;
+    }
+
+    public function setPasswordToken(?string $passwordToken): self
+    {
+        $this->passwordToken = $passwordToken;
 
         return $this;
     }
